@@ -1,0 +1,60 @@
+@import '../../App.scss';
+
+.sc-category {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(200px, 1fr)
+  ); // Utilizare auto-fit pentru layout responsive flexibil
+  gap: 20px; // Distanță uniformă între elemente
+
+  .category-itm {
+    background-color: #fff;
+    position: relative;
+    margin: 0 auto;
+    border-radius: 8px; // Colțuri mai rotunjite pentru un aspect modern
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Umbră mai subtilă
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; // Tranziții pentru hover
+
+    &:hover {
+      transform: translateY(-10px); // Efect de ridicare la hover
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); // Umbră mai adâncă la hover
+    }
+
+    &-img {
+      height: 180px; // Înălțime puțin mărită
+      overflow: hidden; // Asigurare că imaginea rămâne în interiorul containerului
+      border-top-left-radius: 8px; // Rotunjire a colțurilor imaginii
+      border-top-right-radius: 8px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; // Imaginea acoperă complet containerul
+        transition: transform 0.3s ease-in-out;
+      }
+
+      &:hover img {
+        transform: scale(1.1); // Efect de zoom la hover
+      }
+    }
+
+    &-title {
+      position: absolute;
+      bottom: 10px; // Poziționare în partea de jos a imaginii
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.6); // Fundal transparent
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 20px; // Colțuri foarte rotunjite
+      font-size: 14px; // Dimensiune mai mică a textului
+      text-align: center;
+      transition: background-color 0.3s ease-in-out;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.8); // Schimbare a opacității la hover
+      }
+    }
+  }
+}
